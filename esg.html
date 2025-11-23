@@ -1,50 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ambev — Sustentabilidade e ESG</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Ambev — Sustentabilidade & ESG</title>
 <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Intrepid:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Hit+Me+Punk&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header class="hero-header">
-  <h1 class="hero-title">Sustentabilidade e ESG</h1>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">AMBEV</a>
+    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="identidade.html" class="nav-link">Identidade</a>
+      <a href="portfolio.html" class="nav-link">Portfólio</a>
+      <a href="competitividade.html" class="nav-link">Competitividade</a>
+      <a href="micro.html" class="nav-link">Micro</a>
+      <a href="macro.html" class="nav-link">Macro</a>
+      <a href="esg.html" class="nav-link active">ESG</a>
+      <a href="referencias.html" class="nav-link">Referências</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+    </nav>
+  </div>
 </header>
 
-<nav class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="identidade.html">Identidade</a>
-  <a href="portfolio.html">Portfólio</a>
-  <a href="competitividade.html">Competitividade</a>
-  <a href="micro.html">Microeconômica</a>
-  <a href="macro.html">Macroeconômica</a>
-  <a href="esg.html" class="active">Sustentabilidade</a>
-</nav>
+<main class="container">
+  <section class="section">
+    <h1>Sustentabilidade e ESG</h1>
+    <p class="lead">Iniciativas, metas e indicadores ambientais, sociais e de governança.</p>
 
-<main>
-<section class="cards-section">
-  <div class="card">
-    <h2>Inovação Sustentável</h2>
-    <p>Embalagens eco-friendly, redução de consumo de recursos naturais, digitalização de processos logísticos e marketing.</p>
-  </div>
-  <div class="card">
-    <h2>Responsabilidade Social</h2>
-    <p>Projetos de inclusão social, diversidade no ambiente corporativo e integração de ESG na governança corporativa.</p>
-  </div>
-  <div class="card">
-    <h2>Indicadores ESG</h2>
-    <p>Monitoramento contínuo de metas ambientais, sociais e de governança, garantindo transparência e sustentabilidade.</p>
-  </div>
-</section>
+    <div class="cards-section">
+      <div class="card">
+        <h3>Embalagens Sustentáveis</h3>
+        <p>Programas para aumento de reciclabilidade e redução do uso de recursos.</p>
+      </div>
+      <div class="card">
+        <h3>Digitalização e Eficiência</h3>
+        <p>Otimização logística, previsão de demanda e redução de desperdício via dados.</p>
+      </div>
+      <div class="card">
+        <h3>Responsabilidade Social</h3>
+        <p>Projetos sociais, inclusão e promoção de diversidade.</p>
+      </div>
+    </div>
+
+  </section>
 </main>
 
-<footer>
-  <p>Conteúdo acadêmico baseado em relatório detalhado da Ambev.</p>
-</footer>
-
+<footer class="site-footer"><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
 <script src="script.js"></script>
 </body>
 </html>
