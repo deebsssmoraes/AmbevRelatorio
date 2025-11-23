@@ -1,226 +1,85 @@
-/* -----------------------------------------
-   RESET E PADRÕES GERAIS
------------------------------------------ */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* styles.css - corporativo, responsivo, com animações */
+
+/* RESET */
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family: "Roboto", "Segoe UI", Arial, sans-serif; background:#f5f7fa; color:#0A2b6b; line-height:1.6}
+
+/* COLORS */
+:root{
+  --deep-blue:#0A31A7;
+  --accent:#E15824;
+  --white:#ffffff;
+  --muted:#6b7280;
+  --card-bg:#ffffff;
+  --max-w:1200px;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* LAYOUT */
+.container{max-width:var(--max-w);margin:0 auto;padding:20px}
 
-body {
-  font-family: "Roboto", "Open Sans", Arial, sans-serif;
-  background-color: #f5f5f5;
-  color: #222;
-  line-height: 1.6;
-}
+/* HEADER */
+header{background:linear-gradient(90deg,var(--deep-blue),#103fae);color:var(--white);position:sticky;top:0;z-index:60;box-shadow:0 4px 18px rgba(10,49,167,0.12)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo{font-weight:700;font-size:1.1rem;color:var(--white);text-decoration:none}
+.nav-toggle{display:none;background:transparent;border:none;color:var(--white);font-size:1.2rem;cursor:pointer}
 
-/* -----------------------------------------
-   CORES PRINCIPAIS
------------------------------------------ */
-:root {
-  --primary: #0A31A7;
-  --secondary: #E15824;
-  --neutral-light: #f1f1f5;
-  --neutral-dark: #333;
-  --white: #fff;
-  --max-width: 1200px;
-}
+/* NAV */
+.main-nav ul{list-style:none;display:flex;gap:10px;align-items:center}
+.main-nav a{color:var(--white);text-decoration:none;padding:8px 12px;border-radius:6px;font-weight:500;transition:0.18s}
+.main-nav a:hover{background:rgba(255,255,255,0.08)}
+.main-nav a.active{background:var(--accent);color:#fff}
 
-/* -----------------------------------------
-   LAYOUT PRINCIPAL
------------------------------------------ */
-.container {
-  width: 100%;
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: 20px;
-}
+/* HERO */
+.hero{background:linear-gradient(135deg,var(--deep-blue) 55%, var(--accent) 100%);color:#fff;padding:48px 20px;border-radius:8px;margin-top:18px}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:24px;align-items:start}
+.hero h2{font-size:2rem;margin-bottom:12px}
+.lead{font-size:1rem;opacity:0.95}
 
-/* -----------------------------------------
-   CABEÇALHO
------------------------------------------ */
-header {
-  background-color: var(--primary);
-  color: var(--white);
-  padding: 15px 0;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-}
+/* CARDS & GRID */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:18px}
+.card{background:var(--card-bg);padding:18px;border-radius:10px;box-shadow:0 8px 20px rgba(16,24,40,0.06);transition:transform .25s}
+.card:hover{transform:translateY(-6px)}
+.card h3{margin-bottom:8px;color:var(--deep-blue)}
 
-header .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+/* TABLES */
+.data-table{width:100%;border-collapse:collapse;margin-top:12px;background:var(--white);border-radius:6px;overflow:hidden}
+.data-table th,.data-table td{padding:12px;border-bottom:1px solid #eef2f8;text-align:left}
+.data-table th{background:var(--deep-blue);color:#fff;font-weight:600;cursor:pointer}
+.data-table tr:nth-child(even){background:#fbfdff}
 
-header h1 {
-  font-size: 1.6rem;
-  font-weight: 700;
-}
+/* PLACEHOLDER IMAGE - AMBEV BRANDING */
+.image-placeholder{width:100%;height:220px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#F6F0EA;font-weight:700;background:linear-gradient(135deg,var(--deep-blue),var(--accent));font-size:1.1rem}
 
-/* -----------------------------------------
-   MENU
------------------------------------------ */
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-}
+/* BUTTONS */
+.btn{display:inline-block;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700;border:none;cursor:pointer}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.ghost{background:transparent;border:2px solid rgba(10,49,167,0.06);color:var(--deep-blue)}
 
-nav a {
-  text-decoration: none;
-  color: var(--white);
-  font-weight: 500;
-  transition: 0.2s;
-}
+/* FILTERS / SEARCH */
+.search-input{padding:10px;border-radius:8px;border:1px solid #e6e9ef;width:100%;max-width:360px}
 
-nav a:hover {
-  color: var(--secondary);
-}
+/* ANIMATIONS */
+.reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease, transform .6s ease}
+.reveal-visible{opacity:1;transform:none}
+.fade-in{animation:fadeIn .6s ease forwards}
+@keyframes fadeIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 
-/* -----------------------------------------
-   BANNER / HERO
------------------------------------------ */
-.hero {
-  background: linear-gradient(
-    to right,
-    var(--primary),
-    var(--secondary)
-  );
-  color: white;
-  padding: 70px 20px;
-  text-align: center;
-}
+/* QUICK STATS (COUNTERS) */
+.quick-stats{display:flex;gap:12px;margin-top:12px}
+.quick-stats .card{padding:12px;text-align:center}
+.quick-stats .count{font-weight:800;font-size:1.3rem;color:var(--deep-blue)}
 
-.hero h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  margin-bottom: 15px;
-}
+/* FOOTER */
+footer{background:var(--deep-blue);color:#fff;padding:18px 0;margin-top:28px;text-align:center;border-radius:6px}
 
-.hero p {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* -----------------------------------------
-   SEÇÕES DE CONTEÚDO
------------------------------------------ */
-.section {
-  background-color: var(--white);
-  margin: 25px 0;
-  padding: 30px;
-  border-radius: 6px;
-  box-shadow: 0 0 8px rgba(0,0,0,0.08);
-}
-
-.section h2 {
-  font-size: 1.4rem;
-  margin-bottom: 15px;
-  border-left: 4px solid var(--secondary);
-  padding-left: 10px;
-  font-weight: 700;
-  color: var(--neutral-dark);
-}
-
-.section p {
-  margin-bottom: 12px;
-}
-
-/* -----------------------------------------
-   GRID PARA CARDS / BLOCOS
------------------------------------------ */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 20px;
-}
-
-.card {
-  background-color: var(--white);
-  padding: 20px;
-  border-radius: 6px;
-  border: 1px solid #dedede;
-  transition: 0.25s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  border-color: var(--secondary);
-}
-
-/* -----------------------------------------
-   TABELAS ESTILO PROFISSIONAL
------------------------------------------ */
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
-}
-
-table th, table td {
-  border: 1px solid #ddd;
-  padding: 10px 12px;
-  text-align: left;
-}
-
-table th {
-  background-color: var(--primary);
-  color: white;
-}
-
-table tr:nth-child(even) {
-  background-color: #f7f7f7;
-}
-
-/* -----------------------------------------
-   BOTÕES PADRÃO CORPORATIVO
------------------------------------------ */
-button, .btn {
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  background-color: var(--primary);
-  color: var(--white);
-  font-size: 1rem;
-  cursor: pointer;
-  transition: 0.2s;
-  text-decoration: none;
-}
-
-button:hover, .btn:hover {
-  background-color: var(--secondary);
-}
-
-/* -----------------------------------------
-   RODAPÉ
------------------------------------------ */
-footer {
-  background-color: var(--primary);
-  color: white;
-  padding: 30px 0;
-  margin-top: 40px;
-  text-align: center;
-}
-
-/* -----------------------------------------
-   RESPONSIVIDADE
------------------------------------------ */
-@media (max-width: 800px) {
-  nav ul {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-
-  header .container {
-    flex-direction: column;
-    gap: 10px;
-  }
+/* RESPONSIVE */
+@media (max-width:1024px){.hero-grid{grid-template-columns:1fr 320px}}
+@media (max-width:820px){
+  .nav-toggle{display:block}
+  .main-nav{display:none}
+  .header-inner{flex-direction:row;align-items:center}
+  .hero-grid{grid-template-columns:1fr}
+  .image-placeholder{height:180px}
 }
 }
