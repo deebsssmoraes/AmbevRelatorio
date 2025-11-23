@@ -1,26 +1,39 @@
-// Rolagem suave para âncoras
-document.querySelectorAll('a[href^="#"]').forEach(anchor=>{
-    anchor.addEventListener('click',function(e){
+// Script para navegação suave e interações básicas
+
+document.addEventListener('DOMContentLoaded', function() {
+
+  // Suave scroll ao clicar nos links do nav
+  const navLinks = document.querySelectorAll('.main-nav a');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      if(this.getAttribute('href').startsWith('#')) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({behavior:'smooth'});
+        const target = document.querySelector(this.getAttribute('href'));
+        target.scrollIntoView({ behavior: 'smooth' });
+      }
     });
+  });
+
+  // Função modal para referências e sobre
+  const buttons = document.querySelectorAll('button[data-target]');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', function() {
+      const targetId = this.dataset.target;
+      const modal = document.getElementById(targetId);
+      if(modal) {
+        modal.style.display = 'block';
+      }
+    });
+  });
+
+  // Fechar modais
+  const modals = document.querySelectorAll('.modal');
+  modals.forEach(modal => {
+    modal.addEventListener('click', function(e) {
+      if(e.target.classList.contains('modal')) {
+        modal.style.display = 'none';
+      }
+    });
+  });
+
 });
-
-// Tooltip hover dinâmico
-const tooltips = document.querySelectorAll('.tooltip');
-tooltips.forEach(el=>{
-    el.addEventListener('mouseenter',()=>{el.style.fontWeight='600';});
-    el.addEventListener('mouseleave',()=>{el.style.fontWeight='400';});
-});
-
-// Botão voltar ao topo
-const backToTop=document.createElement('button');
-backToTop.textContent='↑'; backToTop.id='back-to-top';
-backToTop.style.position='fixed'; backToTop.style.bottom='30px'; backToTop.style.right='30px';
-backToTop.style.padding='10px 15px'; backToTop.style.border='none'; backToTop.style.borderRadius='50%';
-backToTop.style.background='#2563eb'; backToTop.style.color='#fff'; backToTop.style.cursor='pointer';
-backToTop.style.display='none'; backToTop.style.boxShadow='0 4px 12px rgba(0,0,0,0.3)';
-document.body.appendChild(backToTop);
-
-backToTop.addEventListener('click',()=>{window.scrollTo({top:0,behavior:'smooth'});});
-window.addEventListener('scroll',()=>{backToTop.style.display=(window.scrollY>300)?'block':'none';});
