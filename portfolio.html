@@ -1,50 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Ambev — Portfólio</title>
 <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Intrepid:wght@400;600;700&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Hit+Me+Punk&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<header class="hero-header">
-  <h1 class="hero-title">Portfólio e Cadeia de Valor</h1>
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="logo">AMBEV</a>
+    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="identidade.html" class="nav-link">Identidade</a>
+      <a href="portfolio.html" class="nav-link active">Portfólio</a>
+      <a href="competitividade.html" class="nav-link">Competitividade</a>
+      <a href="micro.html" class="nav-link">Micro</a>
+      <a href="macro.html" class="nav-link">Macro</a>
+      <a href="esg.html" class="nav-link">ESG</a>
+      <a href="referencias.html" class="nav-link">Referências</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
+    </nav>
+  </div>
 </header>
 
-<nav class="main-nav">
-  <a href="index.html">Home</a>
-  <a href="identidade.html">Identidade</a>
-  <a href="portfolio.html" class="active">Portfólio</a>
-  <a href="competitividade.html">Competitividade</a>
-  <a href="micro.html">Microeconômica</a>
-  <a href="macro.html">Macroeconômica</a>
-  <a href="esg.html">Sustentabilidade</a>
-</nav>
+<main class="container">
+  <section class="section">
+    <h1>Portfólio e Cadeia de Valor</h1>
+    <p class="lead">Marcas, digitalização e tendências de consumo.</p>
 
-<main>
-<section class="cards-section">
-  <div class="card">
-    <h2>Marcas Tradicionais</h2>
-    <p>Skol, Brahma, Antarctica e Budweiser, atendendo diferentes segmentos de consumo e preferências regionais.</p>
-  </div>
-  <div class="card">
-    <h2>Digitalização e Logística</h2>
-    <p>Zé Delivery e BEES utilizam inteligência de dados para otimização logística, previsão de demanda e redução de custos operacionais.</p>
-  </div>
-  <div class="card">
-    <h2>Tendências de Consumo</h2>
-    <p>Produtos low-carb, sem álcool e embalagens sustentáveis, alinhados às mudanças comportamentais e demandas por inovação.</p>
-  </div>
-</section>
+    <div class="cards-section">
+      <div class="card">
+        <h3>Marcas Tradicionais</h3>
+        <p>Skol, Brahma, Antarctica, Budweiser — cobertura por segmentos de preço e posicionamento.</p>
+      </div>
+
+      <div class="card">
+        <h3>Digitalização & Logística</h3>
+        <p>Zé Delivery e BEES: previsões de demanda, roteirização e redução de custos via dados.</p>
+      </div>
+
+      <div class="card">
+        <h3>Tendências</h3>
+        <p>Low-carb, sem álcool, embalagens sustentáveis e inovações de produto.</p>
+      </div>
+    </div>
+
+    <section class="detail">
+      <h2>Cadeia de Valor</h2>
+      <p>Integração entre produção, distribuição e canais digitais; foco em eficiência logística e parcerias com varejo.</p>
+    </section>
+  </section>
 </main>
 
-<footer>
-  <p>Conteúdo acadêmico baseado em relatório detalhado da Ambev.</p>
-</footer>
-
+<footer class="site-footer"><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
 <script src="script.js"></script>
 </body>
 </html>
