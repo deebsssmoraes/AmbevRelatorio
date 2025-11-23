@@ -1,61 +1,59 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Ambev — Portfólio</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Portfólio — Ambev</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">AMBEV</a>
-    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
-    <nav class="main-nav" id="main-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="identidade.html" class="nav-link">Identidade</a>
-      <a href="portfolio.html" class="nav-link active">Portfólio</a>
-      <a href="competitividade.html" class="nav-link">Competitividade</a>
-      <a href="micro.html" class="nav-link">Micro</a>
-      <a href="macro.html" class="nav-link">Macro</a>
-      <a href="esg.html" class="nav-link">ESG</a>
-      <a href="referencias.html" class="nav-link">Referências</a>
-      <a href="sobre.html" class="nav-link">Sobre</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="section">
-    <h1>Portfólio e Cadeia de Valor</h1>
-    <p class="lead">Marcas, digitalização e tendências de consumo.</p>
-
-    <div class="cards-section">
-      <div class="card">
-        <h3>Marcas Tradicionais</h3>
-        <p>Skol, Brahma, Antarctica, Budweiser — cobertura por segmentos de preço e posicionamento.</p>
-      </div>
-
-      <div class="card">
-        <h3>Digitalização & Logística</h3>
-        <p>Zé Delivery e BEES: previsões de demanda, roteirização e redução de custos via dados.</p>
-      </div>
-
-      <div class="card">
-        <h3>Tendências</h3>
-        <p>Low-carb, sem álcool, embalagens sustentáveis e inovações de produto.</p>
-      </div>
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AMBEV</a>
+      <button id="nav-toggle" class="nav-toggle">☰</button>
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="identidade.html" class="nav-link">Identidade</a></li>
+          <li><a href="portfolio.html" class="nav-link active">Portfólio</a></li>
+          <li><a href="competitividade.html" class="nav-link">Competitividade</a></li>
+          <li><a href="micro.html" class="nav-link">Micro</a></li>
+          <li><a href="macro.html" class="nav-link">Macro</a></li>
+          <li><a href="esg.html" class="nav-link">ESG</a></li>
+          <li><a href="referencias.html" class="nav-link">Referências</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </nav>
     </div>
+  </header>
 
-    <section class="detail">
-      <h2>Cadeia de Valor</h2>
-      <p>Integração entre produção, distribuição e canais digitais; foco em eficiência logística e parcerias com varejo.</p>
+  <main class="container">
+    <section class="section">
+      <h1>Portfólio e Cadeia de Valor</h1>
+      <p class="lead">Marcas, digitalização e tendências que moldam a estratégia.</p>
+
+      <div class="cards">
+        <div class="card"><h3>Marcas Tradicionais</h3><p>Skol, Brahma, Antarctica, Budweiser — diferentes posicionamentos por canal e preço.</p></div>
+        <div class="card"><h3>Digitalização</h3><p>Zé Delivery e BEES: previsão de demanda, roteirização e redução de custos.</p></div>
+        <div class="card"><h3>Tendências</h3><p>Low-carb, sem álcool e embalagens sustentáveis.</p></div>
+      </div>
+
+      <div style="margin-top:18px" class="card">
+        <h3>Distribuição de Vendas (ex.)</h3>
+        <canvas id="portfolioChart" height="160"></canvas>
+      </div>
     </section>
-  </section>
-</main>
+  </main>
 
-<footer class="site-footer"><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
-<script src="script.js"></script>
+  <footer><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Portfolio chart example
+    const ctxP = document.getElementById('portfolioChart').getContext('2d');
+    window.portfolioChart = new Chart(ctxP, {
+      type:'bar',
+      data:{
+        labels:['On-trade','Off-trade','E-commerce','Delivery'],
+        datasets:[{label:'Share (%)',data:[42,30,15,13],backgroundColor:['#0A31A7','#6b7280','#E15824','#94a3b8']}]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+  </script>
 </body>
 </html>
