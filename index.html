@@ -1,44 +1,87 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
 <title>Ambev — Relatório Executivo</title>
 <link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
+<header class="site-header">
+  <div class="container header-inner">
+    <div class="brand">
+      <a href="index.html" class="logo">AMBEV</a>
+      <div class="tag">Relatório Executivo • Inteligência de Mercado</div>
+    </div>
 
-<header>
-    <h1>Ambev — Relatório Executivo</h1>
-    <nav>
-        <a href="index.html" class="active">Home</a>
-        <a href="identidade.html">Identidade</a>
-        <a href="portfolio.html">Portfólio</a>
-        <a href="competitividade.html">Competitividade</a>
-        <a href="micro.html">Microeconomia</a>
-        <a href="macro.html">Macroeconomia</a>
-        <a href="esg.html">Sustentabilidade</a>
+    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
+
+    <nav class="main-nav" id="main-nav">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="identidade.html" class="nav-link">Identidade</a>
+      <a href="portfolio.html" class="nav-link">Portfólio</a>
+      <a href="competitividade.html" class="nav-link">Competitividade</a>
+      <a href="micro.html" class="nav-link">Micro</a>
+      <a href="macro.html" class="nav-link">Macro</a>
+      <a href="esg.html" class="nav-link">ESG</a>
+      <a href="referencias.html" class="nav-link">Referências</a>
+      <a href="sobre.html" class="nav-link">Sobre</a>
     </nav>
+  </div>
 </header>
 
-<main>
-<section class="hero">
-    <h2>Uma das maiores indústrias de bebidas das Américas</h2>
-    <p>Explore como a Ambev opera, seu impacto econômico e como fatores micro e macroeconômicos moldam seu sucesso. Este relatório visa educar sobre liderança sustentável e inovação no setor.</p>
-    <div class="buttons">
-        <a href="identidade.html" class="cta-button">Identidade</a>
-        <a href="portfolio.html" class="cta-button">Portfólio</a>
-        <a href="competitividade.html" class="cta-button">Competitividade</a>
-        <a href="micro.html" class="cta-button">Microeconômica</a>
-        <a href="macro.html" class="cta-button">Macroeconômica</a>
-        <a href="esg.html" class="cta-button">ESG</a>
+<main class="container">
+  <section class="hero-grid">
+    <div class="hero-left">
+      <h1 class="hero-title">Ambev — Relatório Executivo</h1>
+      <p class="lead">Análise integrada da empresa: identidade corporativa, portfólio, competitividade, análises micro e macroeconômicas e indicadores ESG — formatado para apresentação acadêmica e uso executivo.</p>
+      <div class="hero-ctas">
+        <a class="btn primary" href="identidade.html">Identidade</a>
+        <a class="btn outline" href="competitividade.html">Competitividade</a>
+      </div>
     </div>
-</section>
+    <div class="hero-right">
+      <div class="card hero-stat">
+        <h3>Dados rápidos</h3>
+        <ul class="stats">
+          <li><strong>32</strong> fábricas no Brasil</li>
+          <li><strong>15</strong> países de atuação</li>
+          <li><strong>ABEV3</strong> — B3 (ticker)</li>
+        </ul>
+      </div>
+      <div class="card hero-image">
+        <!-- placeholder ilustrativo: substitua por imagem/ilustração final -->
+        <img src="https://via.placeholder.com/520x300?text=Ilustração+Ambev" alt="Ilustração Ambev" />
+      </div>
+    </div>
+  </section>
+
+  <section class="overview">
+    <h2>Visão Geral do Relatório</h2>
+    <p>Resumo executivo com recomendações estratégicas, análise de mercado, elasticidades por segmento, sensibilidade a macroindicadores e iniciativas de sustentabilidade.</p>
+
+    <div class="cards-row">
+      <article class="card">
+        <h4>Identidade</h4>
+        <p>Missão, visão e valores que orientam governança e cultura organizacional.</p>
+      </article>
+      <article class="card">
+        <h4>Portfólio</h4>
+        <p>Marcas principais, digitalização e tendências de consumo.</p>
+      </article>
+      <article class="card">
+        <h4>Competitividade</h4>
+        <p>Análise Porter e posição frente a Heineken, Petrópolis e artesanais.</p>
+      </article>
+    </div>
+  </section>
 </main>
 
-<footer>
-<small>Conteúdo acadêmico baseado em relatório detalhado da Ambev.</small>
+<footer class="site-footer">
+  <div class="container">
+    <small>Projeto acadêmico — Relatório sobre a Ambev. Conteúdo baseado em fontes públicas e internas.</small>
+  </div>
 </footer>
 
 <script src="script.js"></script>
