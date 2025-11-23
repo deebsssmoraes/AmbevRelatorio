@@ -1,58 +1,64 @@
 <!doctype html>
 <html lang="pt-BR">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Ambev — Análise Macroeconômica</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
-</head>
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Macroeconomia — Ambev</title><link rel="stylesheet" href="styles.css"><script src="https://cdn.jsdelivr.net/npm/chart.js"></script></head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a href="index.html" class="logo">AMBEV</a>
-    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
-    <nav class="main-nav" id="main-nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="identidade.html" class="nav-link">Identidade</a>
-      <a href="portfolio.html" class="nav-link">Portfólio</a>
-      <a href="competitividade.html" class="nav-link">Competitividade</a>
-      <a href="micro.html" class="nav-link">Micro</a>
-      <a href="macro.html" class="nav-link active">Macro</a>
-      <a href="esg.html" class="nav-link">ESG</a>
-      <a href="referencias.html" class="nav-link">Referências</a>
-      <a href="sobre.html" class="nav-link">Sobre</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="section">
-    <h1>Análise Macroeconômica</h1>
-    <p class="lead">Impacto de PIB, inflação, câmbio, balança comercial e desemprego no desempenho da Ambev.</p>
-
-    <div class="cards-section">
-      <div class="card">
-        <h3>PIB</h3>
-        <p>Crescimento de 3,4% em 2024 — aumenta renda disponível e consumo de bebidas.</p>
-      </div>
-      <div class="card">
-        <h3>Balança Comercial</h3>
-        <p>Superávit R$ 74,5 bilhões — estabilidade cambial e redução de custos de insumos.</p>
-      </div>
-      <div class="card">
-        <h3>Inflação</h3>
-        <p>4,83% em 2024 — pressão sobre preços e margens.</p>
-      </div>
-      <div class="card">
-        <h3>Desemprego</h3>
-        <p>6,6% em 2024 — influencia demanda em bares e restaurantes.</p>
-      </div>
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AMBEV</a>
+      <button id="nav-toggle" class="nav-toggle">☰</button>
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="identidade.html" class="nav-link">Identidade</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfólio</a></li>
+          <li><a href="competitividade.html" class="nav-link">Competitividade</a></li>
+          <li><a href="micro.html" class="nav-link">Micro</a></li>
+          <li><a href="macro.html" class="nav-link active">Macro</a></li>
+          <li><a href="esg.html" class="nav-link">ESG</a></li>
+          <li><a href="referencias.html" class="nav-link">Referências</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
+        </ul>
+      </nav>
     </div>
-  </section>
-</main>
+  </header>
 
-<footer class="site-footer"><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
-<script src="script.js"></script>
+  <main class="container">
+    <section class="section">
+      <h1>Análise Macroeconômica</h1>
+      <p class="lead">Impacto de PIB, inflação, câmbio e desemprego no desempenho da Ambev.</p>
+
+      <div class="card">
+        <canvas id="macroChart" height="160"></canvas>
+      </div>
+
+      <div style="margin-top:14px" class="cards">
+        <div class="card"><h3>PIB</h3><p>Crescimento de 3,4% em 2024 — eleva demanda.</p></div>
+        <div class="card"><h3>Inflação</h3><p>4,83% em 2024 — pressão sobre custos.</p></div>
+        <div class="card"><h3>Balança Comercial</h3><p>Superávit R$ 74,5 bi — maior previsibilidade cambial.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
+
+  <script src="script.js"></script>
+  <script>
+    const ctxM = document.getElementById('macroChart').getContext('2d');
+    window.macroChart = new Chart(ctxM, {
+      type:'line',
+      data:{
+        labels:['2019','2020','2021','2022','2023','2024'],
+        datasets:[{
+          label:'PIB (%)',
+          data:[1.1,-3.9,4.6,2.8,1.7,3.4],
+          borderColor:'#0A31A7',
+          backgroundColor:'rgba(10,49,167,0.08)',
+          fill:true,
+          tension:0.3
+        }]
+      },
+      options:{responsive:true,plugins:{legend:{display:false}}}
+    });
+  </script>
 </body>
 </html>
