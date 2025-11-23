@@ -1,89 +1,96 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Ambev — Relatório Executivo</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Ambev — Relatório Executivo (Home)</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="brand">
-      <a href="index.html" class="logo">AMBEV</a>
-      <div class="tag">Relatório Executivo • Inteligência de Mercado</div>
-    </div>
-
-    <button id="nav-toggle" aria-label="Abrir menu" class="nav-toggle">☰</button>
-
-    <nav class="main-nav" id="main-nav">
-      <a href="index.html" class="nav-link active">Home</a>
-      <a href="identidade.html" class="nav-link">Identidade</a>
-      <a href="portfolio.html" class="nav-link">Portfólio</a>
-      <a href="competitividade.html" class="nav-link">Competitividade</a>
-      <a href="micro.html" class="nav-link">Micro</a>
-      <a href="macro.html" class="nav-link">Macro</a>
-      <a href="esg.html" class="nav-link">ESG</a>
-      <a href="referencias.html" class="nav-link">Referências</a>
-      <a href="sobre.html" class="nav-link">Sobre</a>
-    </nav>
-  </div>
-</header>
-
-<main class="container">
-  <section class="hero-grid">
-    <div class="hero-left">
-      <h1 class="hero-title">Ambev — Relatório Executivo</h1>
-      <p class="lead">Análise integrada da empresa: identidade corporativa, portfólio, competitividade, análises micro e macroeconômicas e indicadores ESG — formatado para apresentação acadêmica e uso executivo.</p>
-      <div class="hero-ctas">
-        <a class="btn primary" href="identidade.html">Identidade</a>
-        <a class="btn outline" href="competitividade.html">Competitividade</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="card hero-stat">
-        <h3>Dados rápidos</h3>
-        <ul class="stats">
-          <li><strong>32</strong> fábricas no Brasil</li>
-          <li><strong>15</strong> países de atuação</li>
-          <li><strong>ABEV3</strong> — B3 (ticker)</li>
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">AMBEV</a>
+      <button id="nav-toggle" class="nav-toggle">☰</button>
+      <nav id="main-nav" class="main-nav">
+        <ul>
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="identidade.html" class="nav-link">Identidade</a></li>
+          <li><a href="portfolio.html" class="nav-link">Portfólio</a></li>
+          <li><a href="competitividade.html" class="nav-link">Competitividade</a></li>
+          <li><a href="micro.html" class="nav-link">Micro</a></li>
+          <li><a href="macro.html" class="nav-link">Macro</a></li>
+          <li><a href="esg.html" class="nav-link">ESG</a></li>
+          <li><a href="referencias.html" class="nav-link">Referências</a></li>
+          <li><a href="sobre.html" class="nav-link">Sobre</a></li>
         </ul>
-      </div>
-      <div class="card hero-image">
-        <!-- placeholder ilustrativo: substitua por imagem/ilustração final -->
-        <img src="https://via.placeholder.com/520x300?text=Ilustração+Ambev" alt="Ilustração Ambev" />
-      </div>
+      </nav>
     </div>
-  </section>
+  </header>
 
-  <section class="overview">
-    <h2>Visão Geral do Relatório</h2>
-    <p>Resumo executivo com recomendações estratégicas, análise de mercado, elasticidades por segmento, sensibilidade a macroindicadores e iniciativas de sustentabilidade.</p>
+  <main class="container">
+    <section class="hero section">
+      <div class="hero-grid">
+        <div>
+          <h2>Ambev — Relatório Executivo</h2>
+          <p class="lead">Análise integrada para apresentação acadêmica: identidade, portfólio, competitividade, micro/macroeconomia e ESG.</p>
+          <div style="margin-top:14px">
+            <a class="btn primary" href="identidade.html">Identidade</a>
+            <a class="btn" href="competitividade.html">Competitividade</a>
+          </div>
 
-    <div class="cards-row">
-      <article class="card">
-        <h4>Identidade</h4>
-        <p>Missão, visão e valores que orientam governança e cultura organizacional.</p>
-      </article>
-      <article class="card">
-        <h4>Portfólio</h4>
-        <p>Marcas principais, digitalização e tendências de consumo.</p>
-      </article>
-      <article class="card">
-        <h4>Competitividade</h4>
-        <p>Análise Porter e posição frente a Heineken, Petrópolis e artesanais.</p>
-      </article>
-    </div>
-  </section>
-</main>
+          <div class="quick-stats" style="margin-top:18px">
+            <div class="card">
+              <div class="count" data-target="32">0</div>
+              <div class="muted">Fábricas (BR)</div>
+            </div>
+            <div class="card">
+              <div class="count" data-target="15">0</div>
+              <div class="muted">Países</div>
+            </div>
+            <div class="card">
+              <div class="count" data-target="21.5">0</div>
+              <div class="muted">Margem Ambev (%)</div>
+            </div>
+          </div>
+        </div>
 
-<footer class="site-footer">
-  <div class="container">
-    <small>Projeto acadêmico — Relatório sobre a Ambev. Conteúdo baseado em fontes públicas e internas.</small>
-  </div>
-</footer>
+        <div>
+          <div class="card">
+            <canvas id="homeOverviewChart" height="170"></canvas>
+          </div>
+          <div class="card" style="margin-top:12px">
+            <h3>Resumo Executivo</h3>
+            <p>Recomendações: ampliar portfólio sem álcool, fortalecer canais digitais e manter disciplina de custos frente à inflação.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="section">
+      <h2>Destaques</h2>
+      <div class="cards">
+        <div class="card"><h3>Identidade</h3><p>Missão, visão e pilares corporativos.</p></div>
+        <div class="card"><h3>Portfólio</h3><p>Marcas, digitalização e tendências.</p></div>
+        <div class="card"><h3>ESG</h3><p>Projetos sustentáveis e metas.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container"><small>Projeto acadêmico — Ambev</small></div></footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Home Chart
+    const ctxH = document.getElementById('homeOverviewChart').getContext('2d');
+    window.homeChart = new Chart(ctxH, {
+      type:'doughnut',
+      data:{
+        labels:['Produção','Impostos','Margem Ambev'],
+        datasets:[{data:[34.2,24.1,21.5], backgroundColor:['#0A31A7','#E15824','#6b7280']}]
+      },
+      options:{responsive:true,plugins:{legend:{position:'bottom'}}}
+    });
+  </script>
 </body>
 </html>
